@@ -27,11 +27,16 @@ public class BubbleSort<T> {
 
 
 
-    public void imprimir(){
-        for (int i = 0; i < ordenar().length; i++){
-            System.out.println(i > 0 ? ", ": "");
-            System.out.println(ordenar()[i]);
-        }
+    public void imprimir(boolean exibe){
+    	long d1 = System.currentTimeMillis();
+    	if(exibe) {
+	        for (int i = 0; i < ordenar().length; i++){
+	            System.out.print(ordenar()[i]);
+	        }
+    	} else {
+    		ordenar();
+    	}
+    	System.out.println("Tempo: "+ ((System.currentTimeMillis() - d1)/1000.0000) + " segundos.");
     }
 
 }

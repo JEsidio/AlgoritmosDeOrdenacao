@@ -29,12 +29,17 @@ public class InsertSort<T> {
     }
 
 
-    public void imprimir(){
+    public void imprimir(boolean exibe){
+    	long d1 = System.currentTimeMillis();
         System.out.println("Insert Sort:");
-        for (int i = 0; i < ordenar().length; i++){
-            System.out.print(i > 0 ? ", ": "");
-            System.out.print(ordenar()[i]);
+        if (exibe){
+	        for (int i = 0; i < ordenar().length; i++){
+	            System.out.println(ordenar()[i]);
+	        }
+        } else {
+        	ordenar();
         }
+        System.out.println("Tempo: "+ ((System.currentTimeMillis() - d1)/1000.0000) + " segundos.");
     }
 
 }

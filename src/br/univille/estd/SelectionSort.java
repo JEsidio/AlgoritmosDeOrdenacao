@@ -32,12 +32,18 @@ public class SelectionSort<T> {
     }
 
 
-    public void imprimir(){
+    public void imprimir(boolean existe){
+    	long d1 = System.currentTimeMillis();
         System.out.println("Selection Sort:");
-        for (int i = 0; i < ordenar().length; i++){
-            System.out.print(i > 0 ? ", ": "");
-            System.out.print(ordenar()[i]);
+        if (existe) {
+        	for (int i = 0; i < ordenar().length; i++){
+                System.out.print(i > 0 ? ", ": "");
+                System.out.print(ordenar()[i]);
+            }
+        } else {
+        	ordenar();
         }
+        System.out.println("Tempo: "+ ((System.currentTimeMillis() - d1)/1000.0000) + " segundos.");
     }
 
 }

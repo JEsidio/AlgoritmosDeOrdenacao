@@ -23,7 +23,6 @@ public class QuickSort<T> {
     private int auxiliar(int item1, int item2){
         T aux2 = this.objeto[item2];
         int i = item1 - 1;
-
         for(int j = item1; j <= item2 - 1; j++){
             if(comparar.compareTo(this.objeto[j], aux2) <= 0){
                 i = i + 1;
@@ -40,14 +39,16 @@ public class QuickSort<T> {
     }
 
 
-    public void imprimir(){
-        System.out.println("Quick Sort:");
+    public void imprimir(boolean exibe){   	
+    	long d1 = System.currentTimeMillis();
+    	System.out.println("Quick Sort:");
         ordenar(0, this.objeto.length - 1);
-        for (int i = 0; i < this.objeto.length; i++){
-            System.out.println(i > 0 ? " ": "");
-            System.out.println(this.objeto[i]);
+        if (exibe) {
+	        for (int i = 0; i < this.objeto.length; i++){
+	            System.out.println(this.objeto[i]);
+	        }
         }
+        System.out.println("Tempo: "+ ((System.currentTimeMillis() - d1)/1000.0000) + " segundos.");
     }
-
 
 }
